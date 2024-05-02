@@ -93,4 +93,12 @@ public class Historia {
     public void setHistoriador(Historiador historiador) {
         this.historiador = historiador;
     }
+
+    public List<HistoriaCategoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<HistoriaCategoria> categorias) {
+        this.categorias = categorias;
+    }
 }

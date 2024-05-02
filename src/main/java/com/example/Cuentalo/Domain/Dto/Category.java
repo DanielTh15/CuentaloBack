@@ -4,17 +4,16 @@ import java.util.List;
 
 public class Category {
 
-    private Integer CategoriId;
+    private Integer categoryId;
     private String name;
     private String description;
 
-
-    public Integer getCategoriId() {
-        return CategoriId;
+    public Integer getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategoriId(Integer categoriId) {
-        CategoriId = categoriId;
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getName() {

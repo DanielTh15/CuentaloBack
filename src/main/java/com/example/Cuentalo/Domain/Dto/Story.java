@@ -2,6 +2,7 @@ package com.example.Cuentalo.Domain.Dto;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Story {
 
@@ -12,6 +13,7 @@ public class Story {
     private String authorId;
     private Integer soundId;
     private Writer writer;
+    private List<StoryCategory> categories;
 
 
     public Integer getStoryId() {
@@ -68,5 +70,13 @@ public class Story {
 
     public void setWriter(Writer writer) {
         this.writer = writer;
+    }
+
+    public List<StoryCategory> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<StoryCategory> categories) {
+        this.categories = categories;
     }
 }

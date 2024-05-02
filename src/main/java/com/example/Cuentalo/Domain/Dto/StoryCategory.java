@@ -2,13 +2,13 @@ package com.example.Cuentalo.Domain.Dto;
 
 public class StoryCategory {
 
-   private Integer idHistoria;
+   private Integer idCategoria;
 
-    public Integer getIdHistoria() {
-        return idHistoria;
+    public Integer getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setIdHistoria(Integer idHistoria) {
-        this.idHistoria = idHistoria;
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
     }
 }

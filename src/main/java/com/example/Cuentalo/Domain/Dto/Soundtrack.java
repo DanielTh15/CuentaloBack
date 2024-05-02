@@ -2,17 +2,17 @@ package com.example.Cuentalo.Domain.Dto;
 
 public class Soundtrack {
 
-    private Integer sountrackId;
+    private Integer soundtrackId;
     private String author;
     private String direction;
 
 
-    public Integer getSountrackId() {
-        return sountrackId;
+    public Integer getSoundtrackId() {
+        return soundtrackId;
     }
 
-    public void setSountrackId(Integer sountrackId) {
-        this.sountrackId = sountrackId;
+    public void setSoundtrackId(Integer soundtrackId) {
+        this.soundtrackId = soundtrackId;
     }
 
     public String getAuthor() {
