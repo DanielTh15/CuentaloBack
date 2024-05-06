@@ -1,0 +1,2 @@
+insert into historiador values('1007823151', 'Daniel', 'Thevening', '3005965069', 'dtheveningdiaz@gmail.com', 'Sahagún', 'calle19No6a50');
+insert into categoria(nombre, descripcion) values('Terror en el Campo', 'Historias relacionadas a fantasmas, almas en pena que abundan en los campos');
