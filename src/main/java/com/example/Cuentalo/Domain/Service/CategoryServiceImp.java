@@ -5,6 +5,7 @@ import com.example.Cuentalo.Domain.Repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryServiceImp implements CategoryService{
@@ -19,4 +20,20 @@ public class CategoryServiceImp implements CategoryService{
     public List<Category> getAll() {
         return categoryRepository.getAll();
     }
+
+    @Override
+    public Optional<Category> findOne(Integer id) {
+        return categoryRepository.findOne(id);
+    }
+
+    @Override
+    public Category save(Category category) {
+        return categoryRepository.save(category);
+    }
+
+    @Override
+    public void delete(Integer id) {
+       categoryRepository.delete(id);
+    }
+
 }

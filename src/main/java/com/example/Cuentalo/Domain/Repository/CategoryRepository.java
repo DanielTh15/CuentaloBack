@@ -11,6 +11,8 @@ public interface CategoryRepository {
 
     Optional<Category> findOne(Integer id);
 
+    Category save(Category category);
 
+    void delete(Integer id);
 
 }

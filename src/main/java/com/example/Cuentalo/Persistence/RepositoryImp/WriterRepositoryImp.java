@@ -8,6 +8,7 @@ import com.example.Cuentalo.Persistence.Mapper.WriterMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class WriterRepositoryImp implements WriterRepository {
@@ -25,4 +26,21 @@ public class WriterRepositoryImp implements WriterRepository {
         List<Historiador> historiadores = writerCrud.findAll();
         return writerMapper.toWriters(historiadores);
     }
+
+    @Override
+    public Optional<Writer> getOne(String id) {
+        return writerCrud.findById(id).map(writerMapper::toWriter);
+    }
+
+    @Override
+    public Writer save(Writer writer) {
+        Historiador historiador = writerMapper.toHistoriador(writer);
+        return writerMapper.toWriter(writerCrud.save(historiador));
+    }
+
+    @Override
+    public void delete(String id) {
+      writerCrud.deleteById(id);
+    }
+
 }

@@ -35,6 +35,18 @@ public class CategoryRepositoryImp implements CategoryRepository{
         return categoryCrud.findById(id).map(categoryMapper::toCategory);
     }
 
+    @Override
+    public Category save(Category category) {
+        Categoria categoria = categoryMapper.toCategoria(category);
+        return categoryMapper.toCategory(categoryCrud.save(categoria));
+    }
+
+    @Override
+    public void delete(Integer id) {
+       categoryCrud.deleteById(id);
+    }
+
+
 
 }
 
