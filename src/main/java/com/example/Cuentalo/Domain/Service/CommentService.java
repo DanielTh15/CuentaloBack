@@ -1,11 +1,11 @@
-package com.example.Cuentalo.Domain.Repository;
+package com.example.Cuentalo.Domain.Service;
 
 import com.example.Cuentalo.Domain.Dto.Comment;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface CommentRepository {
+public interface CommentService {
 
     List<Comment> getAll();
 
@@ -14,5 +14,6 @@ public interface CommentRepository {
     Comment save(Comment comment);
 
     void delete(Integer id);
+
 
 }

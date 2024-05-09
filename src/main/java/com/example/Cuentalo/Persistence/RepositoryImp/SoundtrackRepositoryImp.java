@@ -8,6 +8,7 @@ import com.example.Cuentalo.Persistence.Mapper.SoundtrackMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class SoundtrackRepositoryImp implements SoundtrackRepository {
@@ -24,5 +25,21 @@ public class SoundtrackRepositoryImp implements SoundtrackRepository {
     public List<Soundtrack> getAll() {
         List<Sonidofondo> sonidofondos = soundtrackCrud.findAll();
         return soundtrackMapper.toSoundtrack(sonidofondos);
+    }
+
+    @Override
+    public Optional<Soundtrack> getOne(Integer id) {
+        return soundtrackCrud.findById(id).map(soundtrackMapper::toSoundtrack);
+    }
+
+    @Override
+    public Soundtrack save(Soundtrack soundtrack) {
+        Sonidofondo sonidofondo = soundtrackMapper.toSonidoFondo(soundtrack);
+        return soundtrackMapper.toSoundtrack(soundtrackCrud.save(sonidofondo));
+    }
+
+    @Override
+    public void delete(Integer id) {
+       soundtrackCrud.deleteById(id);
     }
 }

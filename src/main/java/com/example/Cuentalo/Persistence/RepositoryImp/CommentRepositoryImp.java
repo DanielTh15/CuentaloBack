@@ -8,6 +8,7 @@ import com.example.Cuentalo.Persistence.Mapper.CommentMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class CommentRepositoryImp implements CommentRepository {
@@ -25,5 +26,21 @@ public class CommentRepositoryImp implements CommentRepository {
     public List<Comment> getAll() {
         List<Comentario> comentarios = comentarioCrud.findAll();
         return commentMapper.toComment(comentarios);
+    }
+
+    @Override
+    public Optional<Comment> getOne(Integer id) {
+        return comentarioCrud.findById(id).map(commentMapper::toComment);
+    }
+
+    @Override
+    public Comment save(Comment comment) {
+        Comentario comentario = commentMapper.toComentario(comment);
+        return commentMapper.toComment(comentarioCrud.save(comentario));
+    }
+
+    @Override
+    public void delete(Integer id) {
+      comentarioCrud.deleteById(id);
     }
 }

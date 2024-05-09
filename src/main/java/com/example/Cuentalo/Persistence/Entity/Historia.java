@@ -16,7 +16,9 @@ public class Historia {
     private String titulo;
     private String contenido;
     private LocalDateTime fecha;
+    @Column(name = "id_historiador")
     private String idAutor;
+    @Column(name = "id_soundtrack")
     private Integer idSound;
 
     @ManyToOne
