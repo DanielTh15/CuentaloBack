@@ -3,10 +3,11 @@ package com.example.Cuentalo.Domain.Service;
 import com.example.Cuentalo.Domain.Dto.Comment;
 import com.example.Cuentalo.Domain.Repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class CommentServiceImp implements CommentService{
 
     private final CommentRepository commentRepository;

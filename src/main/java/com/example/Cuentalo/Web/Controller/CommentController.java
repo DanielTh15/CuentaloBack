@@ -4,11 +4,10 @@ import com.example.Cuentalo.Domain.Dto.Comment;
 import com.example.Cuentalo.Domain.Service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/comment")
@@ -24,6 +23,22 @@ public class CommentController {
     @GetMapping("/all")
     public ResponseEntity<List<Comment>> getAll(){
         return ResponseEntity.ok(commentService.getAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Comment>> getOne(@PathVariable Integer id){
+        return ResponseEntity.ok(commentService.getOne(id));
+    }
+
+    @PostMapping("/save")
+    public ResponseEntity<Comment> save(@RequestBody Comment comment){
+        return ResponseEntity.ok(commentService.save(comment));
+    };
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<Void> delete(@PathVariable Integer id){
+        commentService.delete(id);
+        return ResponseEntity.ok().build();
     }
 
 }
