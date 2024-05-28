@@ -19,6 +19,7 @@ public class StoryController {
     public StoryController(StoryService storyService) {
         this.storyService = storyService;
     }
+    @CrossOrigin("http://localhost:4200")
     @GetMapping("/all")
     public ResponseEntity<List<Story>> getAll(){
         return ResponseEntity.ok(storyService.getAll());
@@ -27,8 +28,9 @@ public class StoryController {
     public ResponseEntity<Optional<Story>> getOne(@PathVariable Integer id){
         return ResponseEntity.ok(storyService.getOne(id));
     }
+    @CrossOrigin("http://localhost:4200")
     @PostMapping("/save")
-    public ResponseEntity<Story> save(Story story){
+    public ResponseEntity<Story> save(@RequestBody Story story){
         return ResponseEntity.ok(storyService.save(story));
     }
 

@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {WriterMapper.class})
+@Mapper(componentModel = "spring", uses = {WriterMapper.class, StoryCategoryMapper.class})
 public interface StoryMapper {
 
   @Mappings({
